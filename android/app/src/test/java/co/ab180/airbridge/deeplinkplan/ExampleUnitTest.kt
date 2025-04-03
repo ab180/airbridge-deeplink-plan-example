@@ -1,4 +1,4 @@
-package co.ab180.airbridge.deeplinkplan.example
+package co.ab180.airbridge.deeplinkplan
 
 import org.junit.Test
 

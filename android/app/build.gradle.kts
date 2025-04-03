@@ -1,19 +1,19 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    id("com.android.application")
+    kotlin("android")
 }
 
 android {
-    namespace = "co.ab180.airbridge.deeplinkplan.example"
+    namespace = "co.ab180.airbridge.deeplinkplan"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "co.ab180.airbridge.deeplinkplan.example"
         minSdk = 16
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
+        multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -35,9 +35,12 @@ android {
     }
 
     buildFeatures {
+        buildConfig = true
         viewBinding = true
     }
 }
+
+apply<DynamicAppPlugin>()
 
 dependencies {
 
@@ -46,5 +49,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.airbridge)
     testImplementation(libs.junit)
 }

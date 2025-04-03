@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">deeplinkplan</string>
+    <string name="app_name">deeplink-plan</string>
+    <string name="app_title">Airbridge DeepLink Plan</string>
+
+    <string name="airbridge_app_name">App Name:</string>
+    <string name="airbridge_app_token">App Token:</string>
+    <string name="domain_verification_state">Domain verification state:</string>
+
+    <string name="ok">OK</string>
+    <string name="copy">Copy</string>
+    <string name="clipboard_label">AIRBRIDGE</string>
+    <string name="toast_copy_to_clipboard">Link copied to clipboard</string>
+
+    <string name="title_deeplink">Deeplink</string>
+    <string name="title_deferred_deeplink">Deferred Deeplink</string>
 </resources>
