@@ -25,13 +25,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initUi()
-    }
-
-    override fun onResume() {
-        super.onResume()
 
         // handle airbridge deferred deeplink
-        val isDeferredDeeplinkHandled = Airbridge.handleDeferredDeeplink { uri ->
+        val isHandled = Airbridge.handleDeferredDeeplink { uri ->
+            // when app is opened with deferred deeplink
+            // show proper content using url
             uri?.let {
                 showDialog(
                     title = getString(R.string.title_deferred_deeplink),
@@ -39,15 +37,21 @@ class MainActivity : AppCompatActivity() {
                 )
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
 
         // handle airbridge deeplink
-        val isDeeplinkHandled = Airbridge.handleDeeplink(intent) { uri ->
+        val isHandled = Airbridge.handleDeeplink(intent) { uri ->
+            // when app is opened with airbridge deeplink
+            // show proper content using url (YOUR_SCHEME://...)
             showDialog(
                 title = getString(R.string.title_deeplink),
                 message = uri.toString()
             )
         }
-        if (isDeferredDeeplinkHandled || isDeeplinkHandled) return
+        if (isHandled) return
 
         // when app is opened with other deeplink
         // use existing logic as it is
