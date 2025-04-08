@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		63E7A07E2DA4C76F00C55DBE /* Airbridge in Frameworks */ = {isa = PBXBuildFile; productRef = 63E7A07D2DA4C76F00C55DBE /* Airbridge */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		63261A092D9BB8A70034AD53 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63E7A07E2DA4C76F00C55DBE /* Airbridge in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +130,7 @@
 			);
 			name = example;
 			packageProductDependencies = (
+				63E7A07D2DA4C76F00C55DBE /* Airbridge */,
 			);
 			productName = example;
 			productReference = 632619F82D9BB8A60034AD53 /* example.app */;
@@ -208,6 +214,9 @@
 			);
 			mainGroup = 632619EF2D9BB8A60034AD53;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				63E7A07C2DA4C76F00C55DBE /* XCRemoteSwiftPackageReference "airbridge-ios-sdk-deployment" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 632619F92D9BB8A60034AD53 /* Products */;
 			projectDirPath = "";
@@ -569,6 +578,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63E7A07C2DA4C76F00C55DBE /* XCRemoteSwiftPackageReference "airbridge-ios-sdk-deployment" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ab180/airbridge-ios-sdk-deployment";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63E7A07D2DA4C76F00C55DBE /* Airbridge */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63E7A07C2DA4C76F00C55DBE /* XCRemoteSwiftPackageReference "airbridge-ios-sdk-deployment" */;
+			productName = Airbridge;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 632619F02D9BB8A60034AD53 /* Project object */;
 }
