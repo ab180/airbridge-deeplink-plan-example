@@ -20,9 +20,7 @@ class DynamicAppPlugin : Plugin<Project> {
 
                 manifestPlaceholders.putAll(
                     mapOf(
-                        AIRBRIDGE_SCHEME to config.airbridgeAppName,
-                        AIRBRIDGE_APP_LINKS_1 to "${config.airbridgeAppName}.abr.ge",
-                        AIRBRIDGE_APP_LINKS_2 to "${config.airbridgeAppName}.airbridge.io",
+                        "appName" to config.airbridgeAppName,
                     )
                 )
             }
@@ -48,11 +46,5 @@ class DynamicAppPlugin : Plugin<Project> {
                 }
             }
         }
-    }
-
-    companion object {
-        const val AIRBRIDGE_SCHEME          = "airbridgeScheme"
-        const val AIRBRIDGE_APP_LINKS_1     = "airbridgeAppLinks1"  // abr.ge
-        const val AIRBRIDGE_APP_LINKS_2     = "airbridgeAppLinks2"  // airbridge.io
     }
 }

@@ -12,7 +12,8 @@
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            tools:ignore="AppLinkUrlError, IntentFilterUniqueDataAttributes">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -23,7 +24,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="${airbridgeScheme}" />
+                <data android:scheme="${appName}" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
@@ -31,8 +32,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="http" android:host="${airbridgeAppLinks1}" />
-                <data android:scheme="https" android:host="${airbridgeAppLinks1}" />
+                <data
+                    android:host="${appName}.abr.ge"
+                    android:scheme="http" />
+                <data
+                    android:host="${appName}.abr.ge"
+                    android:scheme="https" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
@@ -40,8 +45,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="http" android:host="${airbridgeAppLinks2}" />
-                <data android:scheme="https" android:host="${airbridgeAppLinks2}" />
+                <data
+                    android:host="${appName}.airbridge.io"
+                    android:scheme="http" />
+                <data
+                    android:host="${appName}.airbridge.io"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
     </application>
