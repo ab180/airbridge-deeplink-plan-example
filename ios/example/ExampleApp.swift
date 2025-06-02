@@ -10,7 +10,7 @@ import SwiftUI
 import Airbridge
 
 @main
-struct exampleApp: App {
+struct ExampleApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {

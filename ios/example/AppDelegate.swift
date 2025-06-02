@@ -10,10 +10,13 @@ import UIKit
 import Airbridge
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-
-        if let appName = AppInfo.current()?.appName,
-           let appToken = AppInfo.current()?.appToken {
+    
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        if let appInfo = AppInfo.current() {
+            let appName = appInfo.appName
+            let appToken = appInfo.appToken
             let option = AirbridgeOptionBuilder(name: appName, token: appToken)
                 .setAutoDetermineTrackingAuthorizationTimeout(second: 0)
                 .build()
@@ -21,7 +24,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         } else {
             print("Fail to initialize Airbridge SDK. Please check your appName and appToken")
         }
-
+        
         return true
     }
 }
